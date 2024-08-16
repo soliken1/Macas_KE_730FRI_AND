@@ -1,0 +1,2 @@
+# Macas_KJ_730FRI
+IT-ELDROID 84128 Activity
