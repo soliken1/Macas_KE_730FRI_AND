@@ -47,134 +47,81 @@ public class MainActivity extends AppCompatActivity {
         Button equalsBtn = findViewById(R.id.equalsBtn);
         Button clearBtn = findViewById(R.id.clearBtn);
 
-        oneBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                concatInput = concatInput + "1";
-                saveInput = saveInput + "1";
-                inputNumbers.setText(saveInput);
-            }
+        oneBtn.setOnClickListener(v -> {
+            concatInput = concatInput + "1";
+            saveInput = saveInput + "1";
+            inputNumbers.setText(saveInput);
         });
 
-        twoBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                concatInput = concatInput + "2";
-                saveInput = saveInput + "2";
-                inputNumbers.setText(saveInput);
-            }
+        twoBtn.setOnClickListener(v -> {
+            concatInput = concatInput + "2";
+            saveInput = saveInput + "2";
+            inputNumbers.setText(saveInput);
         });
 
-        threeBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                concatInput = concatInput + "3";
-                saveInput = saveInput + "3";
-                inputNumbers.setText(saveInput);
-            }
+        threeBtn.setOnClickListener(v -> {
+            concatInput = concatInput + "3";
+            saveInput = saveInput + "3";
+            inputNumbers.setText(saveInput);
         });
 
-        fourBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                concatInput = concatInput + "4";
-                saveInput = saveInput + "4";
-                inputNumbers.setText(saveInput);
-            }
+        fourBtn.setOnClickListener(v -> {
+            concatInput = concatInput + "4";
+            saveInput = saveInput + "4";
+            inputNumbers.setText(saveInput);
         });
 
-        fiveBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                concatInput = concatInput + "5";
-                saveInput = saveInput + "5";
-                inputNumbers.setText(saveInput);
-            }
+        fiveBtn.setOnClickListener(v -> {
+            concatInput = concatInput + "5";
+            saveInput = saveInput + "5";
+            inputNumbers.setText(saveInput);
         });
 
-        sixBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                concatInput = concatInput + "6";
-                saveInput = saveInput + "6";
-                inputNumbers.setText(saveInput);
-            }
+        sixBtn.setOnClickListener(v -> {
+            concatInput = concatInput + "6";
+            saveInput = saveInput + "6";
+            inputNumbers.setText(saveInput);
         });
 
-        sevenBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                concatInput = concatInput + "7";
-                saveInput = saveInput + "7";
-                inputNumbers.setText(saveInput);
-            }
+        sevenBtn.setOnClickListener(v -> {
+            concatInput = concatInput + "7";
+            saveInput = saveInput + "7";
+            inputNumbers.setText(saveInput);
         });
 
-        eightBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                concatInput = concatInput + "8";
-                saveInput = saveInput + "8";
-                inputNumbers.setText(saveInput);
-            }
+        eightBtn.setOnClickListener(v -> {
+            concatInput = concatInput + "8";
+            saveInput = saveInput + "8";
+            inputNumbers.setText(saveInput);
         });
 
-        nineBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                concatInput = concatInput + "9";
-                saveInput = saveInput + "9";
-                inputNumbers.setText(saveInput);
-            }
+        nineBtn.setOnClickListener(v -> {
+            concatInput = concatInput + "9";
+            saveInput = saveInput + "9";
+            inputNumbers.setText(saveInput);
         });
 
-        zeroBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                concatInput = concatInput + "0";
-                saveInput = saveInput + "0";
-                inputNumbers.setText(saveInput);
-            }
+        zeroBtn.setOnClickListener(v -> {
+            concatInput = concatInput + "0";
+            saveInput = saveInput + "0";
+            inputNumbers.setText(saveInput);
         });
 
-        clearBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                concatInput = "";
-                saveInput = "";
-                displayInputs.setText("");
-                operatorSelected = "";
-                inputNumbers.setText("");
-            }
+        clearBtn.setOnClickListener(v -> {
+            concatInput = "";
+            saveInput = "";
+            displayInputs.setText("");
+            operatorSelected = "";
+            inputNumbers.setText("");
         });
 
-        plusBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                operatorEvents("+");
-            }
-        });
+        plusBtn.setOnClickListener(v -> operatorEvents("+"));
 
-        minusBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                operatorEvents("-");
-            }
-        });
+        minusBtn.setOnClickListener(v -> operatorEvents("-"));
 
-        timesBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                operatorEvents("x");
-            }
-        });
+        timesBtn.setOnClickListener(v -> operatorEvents("x"));
 
-        divideBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                operatorEvents("/");
-            }
-        });
+        divideBtn.setOnClickListener(v -> operatorEvents("/"));
 
         equalsBtn.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("DefaultLocale")
