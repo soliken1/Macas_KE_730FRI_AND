@@ -1,7 +1,2 @@
 <resources>
-
-    <string name="app_name">To Do List Application\n</string>
-    <string name="edit_your_to_do">Edit your to-do</string>
-    <string name="delete">Delete</string>
-    <string name="edit">Edit</string>
 </resources>
