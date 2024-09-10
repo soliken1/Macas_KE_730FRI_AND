@@ -1,4 +1,4 @@
-package com.sample.calculator;
+package com.sample.eldroidacts;
 
 import org.junit.Test;
 
