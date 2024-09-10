@@ -4,4 +4,6 @@
     <string name="edit_your_to_do">Edit your to-do</string>
     <string name="delete">Delete</string>
     <string name="edit">Edit</string>
+    <string name="enter_your_to_do">Enter your to-do</string>
+    <string name="add">Add</string>
 </resources>

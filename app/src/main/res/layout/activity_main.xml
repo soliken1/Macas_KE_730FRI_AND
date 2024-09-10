@@ -4,22 +4,19 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <!-- Input Field for To-Do Item -->
     <EditText
         android:id="@+id/todoInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter your to-do"
+        android:hint="@string/enter_your_to_do"
         android:padding="10dp" />
 
-    <!-- Button to Add To-Do -->
     <Button
         android:id="@+id/addButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add" />
+        android:text="@string/add" />
 
-    <!-- ListView to Display To-Do Items -->
     <ListView
         android:id="@+id/todoListView"
         android:layout_width="match_parent"
