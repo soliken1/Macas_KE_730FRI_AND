@@ -5,13 +5,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
+
 import java.util.ArrayList;
 
 public class TodoAdapter extends ArrayAdapter<String> {
@@ -35,36 +35,40 @@ public class TodoAdapter extends ArrayAdapter<String> {
 
         CheckBox checkBox = convertView.findViewById(R.id.checkBox);
         TextView todoText = convertView.findViewById(R.id.todoText);
-        Button editButton = convertView.findViewById(R.id.editButton);
-        Button deleteButton = convertView.findViewById(R.id.deleteButton);
 
         String currentTodo = todoList.get(position);
         todoText.setText(currentTodo);
 
-        editButton.setOnClickListener(v -> {
-            View dialogView = LayoutInflater.from(context).inflate(R.layout.dialog_edit_todo, null);
-            EditText editTodoInput = dialogView.findViewById(R.id.editTodoInput);
-            editTodoInput.setText(currentTodo);
-
-            new AlertDialog.Builder(context)
-                    .setTitle("Edit To-Do")
-                    .setView(dialogView)
-                    .setPositiveButton("Save", (dialog, which) -> {
-                        String updatedTodo = editTodoInput.getText().toString();
-                        if (!updatedTodo.isEmpty()) {
-                            todoList.set(position, updatedTodo);
-                            notifyDataSetChanged();
-                        }
-                    })
-                    .setNegativeButton("Cancel", null)
-                    .show();
-        });
-
-        deleteButton.setOnClickListener(v -> {
-            todoList.remove(position);
-            notifyDataSetChanged();
+        convertView.setOnClickListener(v -> {
+            showEditDeleteDialog(position);
         });
 
         return convertView;
     }
+
+    private void showEditDeleteDialog(int position) {
+        String currentTodo = todoList.get(position);
+
+        View dialogView = LayoutInflater.from(context).inflate(R.layout.dialog_edit_todo, null);
+        EditText editTodoInput = dialogView.findViewById(R.id.editTodoInput);
+        editTodoInput.setText(currentTodo);
+
+        new AlertDialog.Builder(context)
+                .setTitle("Edit or Delete To-Do")
+                .setView(dialogView)
+                .setPositiveButton("Edit", (dialog, which) -> {
+                    String updatedTodo = editTodoInput.getText().toString();
+                    if (!updatedTodo.isEmpty()) {
+                        todoList.set(position, updatedTodo);
+                        notifyDataSetChanged();
+                    }
+                })
+                .setNegativeButton("Delete", (dialog, which) -> {
+                    todoList.remove(position);
+                    notifyDataSetChanged();
+                })
+                .setNeutralButton("Cancel", null)
+                .show();
+    }
 }
+
