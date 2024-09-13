@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.sample.calculator"
+    namespace = "com.sample.eldroidacts"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.sample.calculator"
+        applicationId = "com.sample.eldroidacts"
         minSdk = 21
         targetSdk = 34
         versionCode = 1

@@ -1,4 +1,4 @@
-package com.sample.calculator;
+package com.sample.eldroidacts;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
