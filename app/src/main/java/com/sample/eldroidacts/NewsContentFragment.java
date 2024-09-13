@@ -33,7 +33,7 @@ public class NewsContentFragment extends Fragment {
     }
 
     public int getNewsImageResId() {
-        return getArguments().getInt(ARG_IMAGE, R.drawable.ic_launcher_background); // default image
+        return getArguments().getInt(ARG_IMAGE, R.drawable.ic_launcher_background);
     }
 
     @Override
@@ -43,7 +43,6 @@ public class NewsContentFragment extends Fragment {
         TextView textView = view.findViewById(R.id.news_content_text);
         ImageView imageView = view.findViewById(R.id.news_image);
 
-        // Set the news content and image based on the selected headline
         textView.setText(getNewsContent());
         imageView.setImageResource(getNewsImageResId());
 

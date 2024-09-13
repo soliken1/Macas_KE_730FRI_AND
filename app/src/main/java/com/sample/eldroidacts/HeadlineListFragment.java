@@ -5,14 +5,15 @@ import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.view.View;
 import android.widget.ListView;
+
+import androidx.annotation.NonNull;
 import androidx.fragment.app.ListFragment;
 
 public class HeadlineListFragment extends ListFragment {
 
     private OnHeadlineSelectedListener callback;
 
-    // Sample headlines and news content
-    private String[] headlines = {
+    private final String[] headlines = {
             "Headline 1: Breaking News",
             "Headline 2: Sports Update",
             "Headline 3: Weather Alert",
@@ -20,7 +21,7 @@ public class HeadlineListFragment extends ListFragment {
             "Headline 5: Entertainment"
     };
 
-    private String[] newsContent = {
+    private final String[] newsContent = {
             "Breaking News Content: A massive earthquake has struck the city of San Francisco. Early reports suggest the magnitude of the quake was 7.8 on the Richter scale, causing widespread damage to buildings, roads, and infrastructure. Rescue teams are working around the clock to provide aid and support to those affected.",
 
             "Sports Update Content: The national football team secured a thrilling 3-2 victory over their arch-rivals in the World Cup semi-finals. In an intense match that went into extra time, the winning goal came from a stunning free kick in the final moments. Fans around the country are celebrating the historic win.",
@@ -32,7 +33,7 @@ public class HeadlineListFragment extends ListFragment {
             "Entertainment Content: The much-anticipated sequel to the blockbuster hit 'Galactic Odyssey' has finally hit theaters, and it's already breaking box office records. Critics are praising the film's stunning visual effects, gripping storyline, and standout performances from the all-star cast. Fans can’t get enough of the action-packed space adventure."
     };
 
-    private int[] newsImages = {
+    private final int[] newsImages = {
             R.drawable.ic_launcher_background,
             R.drawable.ic_launcher_background,
             R.drawable.ic_launcher_background,
@@ -46,7 +47,7 @@ public class HeadlineListFragment extends ListFragment {
     }
 
     @Override
-    public void onAttach(Context context) {
+    public void onAttach(@NonNull Context context) {
         super.onAttach(context);
         try {
             callback = (OnHeadlineSelectedListener) context;
