@@ -1,12 +1,26 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="16dp">
 
-    <TextView
-        android:id="@+id/news_content_text"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textSize="18sp"
-        android:textColor="@color/white"
-        android:padding="16dp" />
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/news_image"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/newsimage" />
+
+        <TextView
+            android:id="@+id/news_content_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp" />
+    </LinearLayout>
 </FrameLayout>
