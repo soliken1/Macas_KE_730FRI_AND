@@ -6,11 +6,11 @@ import androidx.fragment.app.FragmentActivity;
 public class MainActivity extends FragmentActivity implements HeadlineListFragment.OnHeadlineSelectedListener {
 
     private int[] newsImages = {
-            R.drawable.ic_launcher_background,
-            R.drawable.ic_launcher_background,
-            R.drawable.ic_launcher_background,
-            R.drawable.ic_launcher_background,
-            R.drawable.ic_launcher_background
+            R.drawable.earthquake,
+            R.drawable.football,
+            R.drawable.weather,
+            R.drawable.phone,
+            R.drawable.movie
     };
 
     @Override

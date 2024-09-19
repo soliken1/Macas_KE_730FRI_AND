@@ -34,11 +34,11 @@ public class HeadlineListFragment extends ListFragment {
     };
 
     private final int[] newsImages = {
-            R.drawable.ic_launcher_background,
-            R.drawable.ic_launcher_background,
-            R.drawable.ic_launcher_background,
-            R.drawable.ic_launcher_background,
-            R.drawable.ic_launcher_background
+            R.drawable.earthquake,
+            R.drawable.football,
+            R.drawable.weather,
+            R.drawable.phone,
+            R.drawable.movie
     };
 
 
@@ -60,7 +60,6 @@ public class HeadlineListFragment extends ListFragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        // Set up the list of headlines using an ArrayAdapter
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(),
                 android.R.layout.simple_list_item_1, headlines);
         setListAdapter(adapter);
@@ -68,7 +67,6 @@ public class HeadlineListFragment extends ListFragment {
 
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
-        // Send the selected headline position and corresponding news content to the activity
         callback.onHeadlineSelected(position, newsContent[position]);
     }
 }
