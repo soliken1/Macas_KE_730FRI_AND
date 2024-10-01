@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Calculator</string>
+    <string name="app_name">Bottom Navigation</string>
     <string name="entertext">0</string>
     <string name="one">1</string>
     <string name="plus">+</string>
@@ -17,4 +17,10 @@
     <string name="equals">=</string>
     <string name="zero">0</string>
     <string name="AC">AC</string>
+    <string name="edit_your_to_do">Edit your to-do</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+    <string name="enter_your_to_do">Enter your to-do</string>
+    <string name="add">Add</string>
+    <string name="image">image</string>
 </resources>
