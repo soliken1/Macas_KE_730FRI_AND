@@ -25,7 +25,6 @@ public class CalculatorFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_calculator, container, false);
 
-        // Initialize the views
         displayInputs = view.findViewById(R.id.displayText);
         inputNumbers = view.findViewById(R.id.inputNumbers);
 
@@ -47,7 +46,6 @@ public class CalculatorFragment extends Fragment {
         Button equalsBtn = view.findViewById(R.id.equalsBtn);
         Button clearBtn = view.findViewById(R.id.clearBtn);
 
-        // Number buttons listeners
         oneBtn.setOnClickListener(v -> updateInput("1"));
         twoBtn.setOnClickListener(v -> updateInput("2"));
         threeBtn.setOnClickListener(v -> updateInput("3"));
@@ -59,29 +57,24 @@ public class CalculatorFragment extends Fragment {
         nineBtn.setOnClickListener(v -> updateInput("9"));
         zeroBtn.setOnClickListener(v -> updateInput("0"));
 
-        // Clear button listener
         clearBtn.setOnClickListener(v -> clearInputs());
 
-        // Operator buttons listeners
         plusBtn.setOnClickListener(v -> operatorEvents("+"));
         minusBtn.setOnClickListener(v -> operatorEvents("-"));
         timesBtn.setOnClickListener(v -> operatorEvents("x"));
         divideBtn.setOnClickListener(v -> operatorEvents("/"));
 
-        // Equals button listener
         equalsBtn.setOnClickListener(v -> calculateResult());
 
         return view;
     }
 
-    // Update the input on number button press
     private void updateInput(String number) {
         concatInput += number;
         saveInput += number;
         inputNumbers.setText(saveInput);
     }
 
-    // Clear all inputs
     private void clearInputs() {
         concatInput = "";
         saveInput = "";
@@ -90,7 +83,6 @@ public class CalculatorFragment extends Fragment {
         inputNumbers.setText("");
     }
 
-    // Handle operator selection
     private void operatorEvents(String operator) {
         num1 = Float.parseFloat(inputNumbers.getText().toString());
         operatorSelected = operator;
@@ -100,7 +92,6 @@ public class CalculatorFragment extends Fragment {
         displayInputs.setText(concatInput);
     }
 
-    // Calculate the result based on the selected operator
     @SuppressLint("DefaultLocale")
     private void calculateResult() {
         num2 = Float.parseFloat(inputNumbers.getText().toString());

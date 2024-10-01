@@ -5,6 +5,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.sample.eldroidacts.CalculatorFragment;
+import com.sample.eldroidacts.ListFragment;
+import com.sample.eldroidacts.ProfileFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,23 +17,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-
-        // Set default fragment
-        loadFragment(new CalculatorFragment());
-
         bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
             Fragment fragment = null;
-            switch (item.getItemId()) {
-                case R.id.navigation_calculator:
-                    fragment = new CalculatorFragment();
-                    break;
-                case R.id.navigation_list:
-                    fragment = new ListFragment();
-                    break;
-                case R.id.navigation_profile:
-                    fragment = new ProfileFragment();
-                    break;
+
+            if (item.getItemId() == R.id.navigation_calculator) {
+                fragment = new CalculatorFragment();
+            } else if (item.getItemId() == R.id.navigation_list) {
+                fragment = new ListFragment();
+            } else if (item.getItemId() == R.id.navigation_profile) {
+                fragment = new ProfileFragment();
             }
+
             return loadFragment(fragment);
         });
     }
@@ -46,5 +43,3 @@ public class MainActivity extends AppCompatActivity {
         return false;
     }
 }
-
-
