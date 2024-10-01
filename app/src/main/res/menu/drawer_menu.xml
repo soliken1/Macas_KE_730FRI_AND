@@ -2,15 +2,15 @@
     <item
         android:id="@+id/nav_first_menu"
         android:title="@string/first_menu"
-        android:icon="@drawable/ic_launcher_background" />
+        android:icon="@drawable/ic_action_menu" />
 
     <item
         android:id="@+id/nav_dialog"
         android:title="@string/show_dialog"
-        android:icon="@drawable/ic_launcher_background" />
+        android:icon="@drawable/ic_action_dialog" />
 
     <item
         android:id="@+id/nav_exit"
         android:title="@string/exit"
-        android:icon="@drawable/ic_launcher_background" />
+        android:icon="@drawable/ic_action_exit" />
 </menu>

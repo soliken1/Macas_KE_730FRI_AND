@@ -1,6 +1,7 @@
 package com.sample.eldroidacts;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         TextView headerSubtitle = headerView.findViewById(R.id.header_subtitle);
 
         navigationView.inflateMenu(R.menu.drawer_menu);
+        Log.d("Menu", "Menu items count: " + navigationView.getMenu().size());
 
         headerTitle.setText("Your Title");
         headerSubtitle.setText("Your Subtitle");

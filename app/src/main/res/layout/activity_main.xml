@@ -5,11 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Main content layout -->
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
@@ -18,7 +17,9 @@
         android:layout_gravity="start"
         app:menu="@menu/drawer_menu"
         app:headerLayout="@layout/nav_header"
-        app:itemIconTint="@color/design_default_color_background"
-        app:itemTextColor="@color/cardview_light_background" />
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/black"
+        android:background="@android:color/black"
+    />
 
 </androidx.drawerlayout.widget.DrawerLayout>
