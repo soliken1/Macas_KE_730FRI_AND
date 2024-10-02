@@ -1,71 +1,77 @@
 package com.sample.eldroidacts;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
+
 import com.google.android.material.navigation.NavigationView;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    private DrawerLayout drawerLayout;
+public class MainActivity extends AppCompatActivity {
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        drawerLayout = findViewById(R.id.drawer_layout);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle("Cookie Clicker");
+            getSupportActionBar().setSubtitle("Remi");
+        }
+
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) DrawerLayout drawerLayout = findViewById(R.id.menu_fragment);
         NavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
 
         View headerView = navigationView.getHeaderView(0);
+        ImageView profileImage = headerView.findViewById(R.id.profile_image);
         TextView headerTitle = headerView.findViewById(R.id.header_title);
         TextView headerSubtitle = headerView.findViewById(R.id.header_subtitle);
 
-        navigationView.inflateMenu(R.menu.drawer_menu);
-        Log.d("Menu", "Menu items count: " + navigationView.getMenu().size());
+        headerTitle.setText("Remilia");
+        headerSubtitle.setText("Cookie Clicker Master");
 
-        headerTitle.setText("Your Title");
-        headerSubtitle.setText("Your Subtitle");
-
-        // Setup ActionBarDrawerToggle
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.drawer_open, R.string.drawer_close);
-        drawerLayout.addDrawerListener(toggle);
-        toggle.syncState();
-
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FirstFragment()).commit();
-            navigationView.setCheckedItem(R.id.nav_first_menu);
-        }
-
+        loadFragment(new FirstFragment());
     }
 
 
+    void loadFragment(Fragment fragment) {
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .commit();
+    }
+
     @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
-        if (item.getItemId() == R.id.nav_first_menu) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FirstFragment()).commit();
-        } else if (item.getItemId() == R.id.nav_dialog) {
-            showDialog();
-        } else if (item.getItemId() == R.id.nav_exit) {
-            finish();
-        }
-        drawerLayout.closeDrawers();
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.drawer_menu, menu);
         return true;
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
 
-    private void showDialog() {
-        DialogFragment dialog = new MenuDialogFragment();
-        dialog.show(getSupportFragmentManager(), "Menu Dialog");
+        if (id == R.id.menu_fragment) {
+            loadFragment(new FirstFragment());
+            return true;
+        } else if (id == R.id.menu_dialog) {
+            DialogFragment dialog = new MenuDialogFragment();
+            dialog.show(getSupportFragmentManager(), "Reset");
+            return true;
+        } else if (id == R.id.menu_exit) {
+            finishAffinity();
+            return true;
+        } else {
+            return super.onOptionsItemSelected(item);
+        }
     }
 }

@@ -1,4 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <style name="Base.Theme.Calculator" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.Calculator" parent="Theme.Material3.DayNight">
     </style>
+    <style name="Theme.Calculator" parent="Base.Theme.Calculator" />
 </resources>

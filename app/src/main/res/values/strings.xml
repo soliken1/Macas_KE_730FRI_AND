@@ -5,4 +5,8 @@
     <string name="first_menu">First Menu</string>
     <string name="show_dialog">Show Dialog</string>
     <string name="exit">Exit</string>
+    <string name="cookie_clicker">Cookie Clicker</string>
+    <string name="_0">0</string>
+    <string name="click_me">Click Me!</string>
+    <string name="todo">TODO</string>
 </resources>

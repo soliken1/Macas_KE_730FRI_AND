@@ -1,16 +1,26 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/nav_first_menu"
+        android:id="@+id/menu_fragment"
         android:title="@string/first_menu"
-        android:icon="@drawable/ic_action_menu" />
+        android:icon="@drawable/ic_action_menu"
+        app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/nav_dialog"
+        android:id="@+id/menu_dialog"
         android:title="@string/show_dialog"
-        android:icon="@drawable/ic_action_dialog" />
+        android:icon="@drawable/ic_action_dialog"
+        app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/nav_exit"
+        android:id="@+id/menu_more"
         android:title="@string/exit"
-        android:icon="@drawable/ic_action_exit" />
+        android:icon="@drawable/ic_action_exit"
+        app:showAsAction="ifRoom">
+        <menu>
+            <item
+                android:id="@+id/menu_exit"
+                android:title="@string/exit" />
+        </menu>
+    </item>
 </menu>
