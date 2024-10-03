@@ -29,17 +29,6 @@ public class MainActivity extends AppCompatActivity {
             getSupportActionBar().setSubtitle("Remi");
         }
 
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) DrawerLayout drawerLayout = findViewById(R.id.menu_fragment);
-        NavigationView navigationView = findViewById(R.id.nav_view);
-
-        View headerView = navigationView.getHeaderView(0);
-        ImageView profileImage = headerView.findViewById(R.id.profile_image);
-        TextView headerTitle = headerView.findViewById(R.id.header_title);
-        TextView headerSubtitle = headerView.findViewById(R.id.header_subtitle);
-
-        headerTitle.setText("Remilia");
-        headerSubtitle.setText("Cookie Clicker Master");
-
         loadFragment(new FirstFragment());
     }
 
