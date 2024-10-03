@@ -1,6 +1,7 @@
 package com.sample.eldroidacts;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,11 +11,14 @@ import androidx.fragment.app.Fragment;
 
 public class NewsContentFragment extends Fragment {
 
+    private static final String TAG = "NewsContentFragment";
+
     private static final String ARG_POSITION = "position";
     private static final String ARG_CONTENT = "content";
     private static final String ARG_IMAGE = "image";
 
     public static NewsContentFragment newInstance(int position, String content, int imageResId) {
+        Log.d(TAG, "Creating new instance: position=" + position + ", content=" + content + ", imageResId=" + imageResId);
         NewsContentFragment fragment = new NewsContentFragment();
         Bundle args = new Bundle();
         args.putInt(ARG_POSITION, position);
@@ -38,6 +42,7 @@ public class NewsContentFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        Log.d(TAG, "onCreateView called");
         View view = inflater.inflate(R.layout.fragment_news_content, container, false);
 
         TextView textView = view.findViewById(R.id.news_content_text);

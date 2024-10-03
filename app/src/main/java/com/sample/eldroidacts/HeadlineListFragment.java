@@ -41,7 +41,6 @@ public class HeadlineListFragment extends ListFragment {
             R.drawable.movie
     };
 
-
     public interface OnHeadlineSelectedListener {
         void onHeadlineSelected(int position, String newsContent);
     }
