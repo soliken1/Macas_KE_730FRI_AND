@@ -3,11 +3,14 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:padding="10dp"
-    android:gravity="center_vertical">
+    android:gravity="center_vertical"
+    android:background="@drawable/list_item_bg"
+    android:layout_margin="5dp">
 
     <CheckBox
         android:id="@+id/checkBox"
         android:layout_width="wrap_content"
+        android:background="@drawable/button_bg"
         android:layout_height="wrap_content" />
 
     <ImageView
@@ -17,7 +20,9 @@
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         android:contentDescription="@string/image"
-        android:src="@drawable/sampleimg" />
+        android:src="@drawable/sampleimg"
+        android:background="@drawable/image_bg"
+        android:padding="5dp" />
 
     <TextView
         android:id="@+id/todoText"
@@ -27,5 +32,6 @@
         android:padding="10dp"
         android:textSize="18sp"
         android:clickable="true"
+        android:textColor="@color/black"
         android:focusable="true" />
 </LinearLayout>
